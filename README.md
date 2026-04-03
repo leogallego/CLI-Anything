@@ -27,7 +27,7 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 <a href="https://github.com/HKUDS/.github/blob/main/profile/README.md"><img src="https://img.shields.io/badge/WeChat-Group-C5EAB4?style=flat&logo=wechat&logoColor=white" alt="WeChat"></a>
 </p>
 
-**One Command Line**: Make any software agent-ready for OpenClaw, nanobot, Cursor, Claude Code, etc.&nbsp;&nbsp;[**中文文档**](README_CN.md) | [**日本語ドキュメント**](README_JA.md)
+**One Command Line**: Make any software agent-ready for Pi, OpenClaw, nanobot, Cursor, Claude Code, etc.&nbsp;&nbsp;[**中文文档**](README_CN.md) | [**日本語ドキュメント**](README_JA.md)
 
 <p align="center">
   <img src="assets/cli-typing.gif" alt="CLI-Anything typing demo" width="800">
@@ -117,7 +117,7 @@ CLI is the universal interface for both humans and AI agents:
 
 - **Python 3.10+**
 - Target software installed (e.g., GIMP, Blender, LibreOffice, or your own application)
-- A supported AI coding agent: [Claude Code](#-claude-code) | [OpenClaw](#-openclaw) | [OpenCode](#-opencode) | [Codex](#-codex) | [Qodercli](#-qodercli) | [GitHub Copilot CLI](#-github-copilot-cli) | [More Platforms](#-more-platforms-coming-soon)
+- A supported AI coding agent: [Claude Code](#-claude-code) | [Pi](#-pi-coding-agent) | [OpenClaw](#-openclaw) | [OpenCode](#-opencode) | [Codex](#-codex) | [Qodercli](#-qodercli) | [GitHub Copilot CLI](#-github-copilot-cli) | [More Platforms](#-more-platforms-coming-soon)
 
 ### Pick Your Platform
 
@@ -195,6 +195,65 @@ cp -r CLI-Anything/cli-anything-plugin ~/.claude/plugins/cli-anything
 ```
 
 </details>
+
+</details>
+
+<details>
+<summary><h4 id="-pi-coding-agent">⚡ Pi Coding Agent</h4></summary>
+
+**Step 1: Install the Extension**
+
+Pi extensions are loaded automatically from the `.pi-extension/extensions/` directory. To install CLI-Anything:
+
+```bash
+# Clone the repo
+git clone https://github.com/HKUDS/CLI-Anything.git
+
+# The extension is already included in the repository at:
+# CLI-Anything/.pi-extension/extensions/cli-anything/
+```
+
+If you're developing the extension locally, symlink it to your Pi extensions directory:
+
+```bash
+# Create Pi extensions directory if it doesn't exist
+mkdir -p ~/.pi/extensions
+
+# Symlink the CLI-Anything extension
+ln -s $(pwd)/CLI-Anything/.pi-extension/extensions/cli-anything ~/.pi/extensions/cli-anything
+```
+
+**Step 2: Build a CLI in One Command**
+
+Once the extension is loaded, the following commands are available:
+
+```bash
+# Generate a complete CLI for GIMP (all 7 phases)
+/cli-anything ./gimp
+
+# Build from a GitHub repo
+/cli-anything https://github.com/blender/blender
+```
+
+**Step 3 (Optional): Refine and Improve the CLI**
+
+```bash
+# Broad refinement — agent analyzes gaps across all capabilities
+/cli-anything:refine ./gimp
+
+# Focused refinement — target a specific functionality area
+/cli-anything:refine ./gimp "batch processing and filters"
+```
+
+**Available Commands**
+
+| Command | Description |
+|---------|-------------|
+| `/cli-anything <path-or-repo>` | Build a complete CLI harness |
+| `/cli-anything:refine <path> [focus]` | Refine an existing CLI harness |
+| `/cli-anything:test <path-or-repo>` | Run tests for a CLI harness |
+| `/cli-anything:validate <path-or-repo>` | Validate a CLI harness |
+| `/cli-anything:list [options]` | List all CLI-Anything tools |
 
 </details>
 
