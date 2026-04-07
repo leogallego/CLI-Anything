@@ -9,6 +9,8 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 
 **🎬 [See Demos](#-real-world-demos)**: Watch AI agents use generated CLIs to produce real artifacts — diagrams, gameplay, subtitles, and more.
 
+**🙋 [Become a Contributor, or Request a CLI]**: [Join us](https://github.com/HKUDS/CLI-Anything/issues/new?template=contributor-signup.yml)! Sign up to build a new CLI harness — once reviewed and merged, you'll gain access as one of our community contributors! Wish CLI-Anything supported a specific software or service? Submit a [wishlist request](https://github.com/HKUDS/CLI-Anything/issues/new?template=cli-wishlist.yml)!
+
 <p align="center">
   <a href="#-quick-start"><img src="https://img.shields.io/badge/Quick_Start-5_min-blue?style=for-the-badge" alt="Quick Start"></a>
   <a href="https://hkuds.github.io/CLI-Anything/"><img src="https://img.shields.io/badge/CLI_Hub-Browse_%26_Install-ff69b4?style=for-the-badge" alt="CLI Hub"></a>
@@ -43,7 +45,18 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 
 > Thanks to all invaluable efforts from the community! More updates continuously on the way everyday..
 
-- **2026-03-30** 🏗️ **CLI-Anything v0.2.0** — HARNESS.md progressive disclosure redesign. Detailed guides (MCP backend, filter translation, timecode, session locking, PyPI publishing, SKILL.md generation) extracted into `guides/` for on-demand loading. Phases 1–7 now contiguous. Key Principles and Rules merged into a single authoritative section. Added Guides Reference routing table. Renamed "Critical Lessons Learned" to "Architecture Patterns & Pitfalls."
+- **2026-04-08** 🎬 **Openscreen CLI** merged (#183) — screen recording editor harness with fused manual + auto-generated tests (101 tests).
+
+- **2026-04-06** 🔍 **Exa CLI** merged (#172) — AI-powered web search and answers harness. 🎮 **Godot CLI** merged (#140) — game engine harness with full demo-game E2E pipeline. CLI-Hub frontend improvements.
+
+- **2026-04-03** 🧪 **WireMock CLI** merged (#170) — HTTP mock server harness for API testing. Added CLI demo recordings to documentation.
+
+- **2026-04-01** ⚔️ **Slay the Spire II CLI** merged (#148) — game harness for deck-building roguelike. 🎥 **VideoCaptioner CLI** merged (#166) — AI-powered video captioning harness. **IntelWatch** added to registry for B2B OSINT.
+
+<details>
+<summary>Earlier news (Mar 23–30)</summary>
+
+- **2026-03-30** 🏗️ **CLI-Anything v0.2.0** — HARNESS.md progressive disclosure redesign. Detailed guides extracted into `guides/` for on-demand loading. Phases 1–7 now contiguous. Key Principles and Rules merged into a single authoritative section.
 
 - **2026-03-29** 📐 Blender skill docs updated — enforce absolute render paths and correct prerequisites.
 
@@ -53,14 +66,16 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 
 - **2026-03-26** 📖 **Zotero CLI** harness landed for Zotero desktop (library management, collections, citations). Draw.io custom ID bugfix (#132) and registry.json syntax fix.
 
-- **2026-03-25** 🎮 **RenderDoc CLI** merged for GPU frame capture analysis (PSO compute, REPL capture cache). FreeCAD updated for v1.1 (new datum system, tapping, simulation). Blender EEVEE engine name corrected. Zoom token permissions hardened.
+- **2026-03-25** 🎮 **RenderDoc CLI** merged for GPU frame capture analysis. FreeCAD updated for v1.1. Blender EEVEE engine name corrected. Zoom token permissions hardened.
 
-- **2026-03-24** 🏭 **FreeCAD CLI** added with 258 commands across 17 groups. **iTerm2** and **Teltonika RMS** harnesses added to registry. CLI-Hub frontend and README install URLs updated.
+- **2026-03-24** 🏭 **FreeCAD CLI** added with 258 commands across 17 groups. **iTerm2** and **Teltonika RMS** harnesses added to registry.
 
-- **2026-03-23** 🤖 Launched **CLI-Hub meta-skill** — agents can now discover and install CLIs autonomously via [`cli-hub-meta-skill/SKILL.md`](cli-hub-meta-skill/SKILL.md). **Krita CLI** harness merged for digital painting. DOMShell MCP parameter mismatches and connection model fixed.
+- **2026-03-23** 🤖 Launched **CLI-Hub meta-skill** — agents can now discover and install CLIs autonomously. **Krita CLI** harness merged for digital painting.
+
+</details>
 
 <details>
-<summary>Earlier news (Mar 17–22)</summary>
+<summary>Earlier news (Mar 11–22)</summary>
 
 - **2026-03-22** 🎵 **MuseScore CLI** merged with transpose, export, and instrument management.
 
@@ -74,12 +89,7 @@ CLI-Anything: Bridging the Gap Between AI Agents and the World's Software</stron
 
 - **2026-03-17** 🌐 Launched the **[CLI-Hub](https://hkuds.github.io/CLI-Anything/)** — a central registry where you can browse, search, and install any CLI with a single `pip` command.
 
-</details>
-
-<details>
-<summary>Earlier news (Mar 11–16)</summary>
-
-- **2026-03-16** 🤖 Added **SKILL.md generation** (Phase 6.5) — every generated CLI now ships with an AI-discoverable skill definition. Includes `skill_generator.py`, Jinja2 template, and 51 new tests.
+- **2026-03-16** 🤖 Added **SKILL.md generation** (Phase 6.5) — every generated CLI now ships with an AI-discoverable skill definition.
 
 - **2026-03-15** 🐾 Support for **OpenClaw** from the community! Merged Windows `cygpath` guard for cross-platform support.
 
