@@ -33,7 +33,7 @@ def start_rpc(
         f"{'https' if ssl else 'http'}://{server_name}/rpc" if server_name else None
     )
     result["ws_url"] = (
-        f"{'https' if ssl else 'http'}://{server_name}/ws" if server_name else None
+        f"{'wss' if ssl else 'ws'}://{server_name}/ws" if server_name else None
     )
     result["web_stack"] = web_stack
     result["ssl"] = ssl

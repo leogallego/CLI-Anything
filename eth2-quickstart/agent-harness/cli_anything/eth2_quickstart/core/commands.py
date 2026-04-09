@@ -107,6 +107,7 @@ def validator_plan(
     if fee_recipient:
         updates["FEE_RECIPIENT"] = fee_recipient
     if graffiti:
+        # Upstream eth2-quickstart exports key is intentionally spelled "GRAFITTI".
         updates["GRAFITTI"] = graffiti
 
     return {

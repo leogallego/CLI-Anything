@@ -86,6 +86,7 @@
 !/freecad/
 !/iterm2/
 !/slay_the_spire_ii/
+!/eth2-quickstart/
 !/rms/
 !/renderdoc/
 !/cloudcompare/
@@ -150,6 +151,8 @@
 /iterm2/.*
 /slay_the_spire_ii/*
 /slay_the_spire_ii/.*
+/eth2-quickstart/*
+/eth2-quickstart/.*
 /rms/*
 /rms/.*
 /renderdoc/*
@@ -197,6 +200,7 @@
 !/iterm2/agent-harness/
 !/slay_the_spire_ii/agent-harness/
 !/slay_the_spire_ii/README.md
+!/eth2-quickstart/agent-harness/
 !/rms/agent-harness/
 !/renderdoc/agent-harness/
 !/cloudcompare/agent-harness/
