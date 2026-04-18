@@ -502,7 +502,7 @@ cli-anything-gimp --json layer add -n "Background" --type solid --color "#1a1a2e
 cli-anything-gimp
 ```
 
-Each installed CLI ships with a [`SKILL.md`](#-skillmd-generation) inside the Python package (`cli_anything/<software>/skills/SKILL.md`). The REPL banner automatically displays the absolute path to this file so AI agents know exactly where to read the skill definition. No extra configuration needed — `pip install` makes the skill discoverable.
+Each in-repo harness now has a canonical [`SKILL.md`](#-skillmd-generation) at `skills/cli-anything-<software>/SKILL.md`, which makes the monorepo directly discoverable via `npx skills add HKUDS/CLI-Anything --list`. Installed harness packages still ship a compatibility copy at `cli_anything/<software>/skills/SKILL.md`, and the REPL banner prefers the repo-root canonical file when present, falling back to the packaged copy otherwise.
 
 ---
 
@@ -538,7 +538,7 @@ The agent will browse the catalog, install whichever CLI fits the task, and use 
 
 The catalog auto-updates whenever `registry.json` changes — new community CLIs show up automatically.
 
-> **For Claude Code users:** Copy [`cli-hub-meta-skill/SKILL.md`](cli-hub-meta-skill/SKILL.md) into your project or skills directory for the same automatic CLI discovery.
+> **For Claude Code users:** Copy [`skills/cli-hub-meta-skill/SKILL.md`](skills/cli-hub-meta-skill/SKILL.md) into your project or skills directory for the same automatic CLI discovery.
 
 ---
 
@@ -671,7 +671,7 @@ All CLIs organized under cli_anything.* namespace — conflict-free, pip-install
 
 ### 🤖 SKILL.md Generation
 
-Each generated CLI includes a `SKILL.md` file inside the Python package at `cli_anything/<software>/skills/SKILL.md`. This self-contained skill definition enables AI agents to discover and use the CLI through Claude Code's skill system or other agent frameworks.
+Each generated CLI now has a canonical `SKILL.md` at `skills/cli-anything-<software>/SKILL.md`. This makes the current monorepo directly consumable by `npx skills`, while a packaged compatibility copy at `cli_anything/<software>/skills/SKILL.md` preserves installed-harness behavior.
 
 **What SKILL.md provides:**
 - **YAML frontmatter** with name and description for agent skill discovery
@@ -679,7 +679,7 @@ Each generated CLI includes a `SKILL.md` file inside the Python package at `cli_
 - **Usage examples** for common workflows
 - **Agent-specific guidance** for JSON output, error handling, and programmatic use
 
-SKILL.md files are auto-generated during Phase 6.5 of the pipeline using `skill_generator.py`, which extracts metadata directly from the CLI's Click decorators, setup.py, and README. Because the file lives inside the package, it is installed alongside the CLI via `pip install` and auto-detected by the REPL banner — agents can read the absolute path displayed at startup.
+SKILL.md files are auto-generated during Phase 6.5 of the pipeline using `skill_generator.py`, which extracts metadata directly from the CLI's Click decorators, setup.py, and README. The generator now writes the canonical repo-root skill file and refreshes the package-local compatibility copy used by installed harnesses. Inside this repo, the REPL banner points agents to the canonical root skill path; after `pip install`, it falls back to the packaged copy.
 
 ---
 

@@ -258,21 +258,6 @@
       flex-shrink: 0;
     }
 
-    .nav-link-stars {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 2.9rem;
-      padding: 0.14rem 0.52rem;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      color: var(--text);
-      font-size: 0.73rem;
-      font-variant-numeric: tabular-nums;
-      line-height: 1.1;
-    }
-
     .theme-toggle {
       width: 42px;
       padding: 0;
@@ -1357,6 +1342,11 @@
         rgba(0,0,0,0.14);
     }
 
+    .card-command-stack {
+      display: grid;
+      gap: 0.75rem;
+    }
+
     .card--public .card-command-block {
       background:
         linear-gradient(180deg, rgba(241, 179, 107, 0.08), rgba(255,255,255,0.02)),
@@ -1417,7 +1407,6 @@
     }
 
     .card-links a,
-    .card-link-btn,
     .card-contributor a {
       display: inline-flex;
       align-items: center;
@@ -1433,84 +1422,10 @@
     }
 
     .card-links a:hover,
-    .card-link-btn:hover,
     .card-contributor a:hover {
       color: var(--text);
       border-color: var(--border-strong);
       background: rgba(255,255,255,0.08);
-    }
-
-    .card-link-btn {
-      cursor: pointer;
-      font: inherit;
-    }
-
-    .skill-popover {
-      position: relative;
-      display: inline-flex;
-      align-items: center;
-    }
-
-    .skill-popover-panel {
-      position: absolute;
-      left: 0;
-      top: calc(100% + 0.5rem);
-      width: min(18.5rem, calc(100vw - 3rem));
-      padding: 0.78rem;
-      border-radius: 18px;
-      border: 1px solid rgba(130, 149, 180, 0.34);
-      background: rgba(251, 247, 239, 0.98);
-      color: #1a2433;
-      box-shadow: 0 22px 48px rgba(8, 16, 28, 0.22);
-      opacity: 0;
-      transform: translateY(-4px);
-      pointer-events: none;
-      transition: opacity 0.18s ease, transform 0.18s ease;
-      z-index: 12;
-    }
-
-    .skill-popover.is-open .skill-popover-panel {
-      opacity: 1;
-      transform: translateY(0);
-      pointer-events: auto;
-    }
-
-    .skill-popover-label {
-      display: block;
-      margin-bottom: 0.5rem;
-      font-size: 0.66rem;
-      font-weight: 700;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: #67758c;
-    }
-
-    .skill-popover-panel code {
-      display: block;
-      padding: 0.62rem 0.68rem;
-      border-radius: 14px;
-      border: 1px solid rgba(130, 149, 180, 0.25);
-      background: rgba(226, 232, 240, 0.5);
-      color: #182130;
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.74rem;
-      line-height: 1.6;
-      white-space: pre-wrap;
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    .skill-popover-copy {
-      margin-top: 0.62rem;
-      background: rgba(255,255,255,0.7);
-      color: #314155;
-      border-color: rgba(130, 149, 180, 0.3);
-    }
-
-    .skill-popover-copy:hover {
-      color: #182130;
-      border-color: rgba(49, 65, 85, 0.3);
-      background: rgba(255,255,255,0.88);
     }
 
     .community-badge {
@@ -1575,13 +1490,15 @@
     }
 
     .footer-copy a,
-    .footer-brand a {
+    .footer-brand a,
+    .footer-analytics-link {
       color: var(--text);
       text-decoration: none;
     }
 
     .footer-copy a:hover,
-    .footer-brand a:hover {
+    .footer-brand a:hover,
+    .footer-analytics-link:hover {
       text-decoration: underline;
     }
 
@@ -1846,13 +1763,12 @@
         </span>
       </a>
       <div class="nav-links">
-        <a class="nav-link" href="https://reeceyang.sgp1.cdn.digitaloceanspaces.com/SKILL.md" target="_blank">
+        <a class="nav-link" href="https://github.com/HKUDS/CLI-Anything/blob/main/skills/cli-hub-meta-skill/SKILL.md" target="_blank">
           SKILL.md
         </a>
         <a class="nav-link" href="https://github.com/HKUDS/CLI-Anything" target="_blank">
           <svg viewBox="0 0 98 96" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6C29.304 70.25 17.9 66.013 17.9 47.02c0-5.52 1.94-10.046 5.127-13.58-.486-1.302-2.264-6.437.486-13.34 0 0 4.206-1.302 13.59 5.216 3.963-1.14 8.17-1.628 12.34-1.628 4.17 0 8.376.568 12.34 1.628 9.384-6.518 13.59-5.216 13.59-5.216 2.75 6.903.972 12.038.486 13.34 3.268 3.534 5.127 8.06 5.127 13.58 0 19.074-11.485 23.15-22.328 24.29 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/></svg>
           GitHub
-          <span class="nav-link-stars" data-github-stars aria-label="GitHub star count">--</span>
         </a>
         <a class="nav-link" href="https://github.com/HKUDS/CLI-Anything/blob/main/CONTRIBUTING.md" target="_blank">Contribute</a>
         <button class="theme-toggle" onclick="toggleTheme()" aria-label="Toggle theme">
@@ -1868,7 +1784,7 @@
         <h1><em>CLI</em> tools for <span>software, APIs, and autonomous agents.</span></h1>
         <p class="hero-lead"><strong>Any software. Any codebase. Any Web API.</strong> Install an orchestration hub that can discover, explain, install, update, and remove CLIs across first-party harnesses and public ecosystems.</p>
         <div class="hero-actions">
-          <a class="btn-primary" href="https://reeceyang.sgp1.cdn.digitaloceanspaces.com/SKILL.md" target="_blank">Get Agent SKILL</a>
+          <a class="btn-primary" href="https://github.com/HKUDS/CLI-Anything/blob/main/skills/cli-hub-meta-skill/SKILL.md" target="_blank">Get Agent SKILL</a>
           <a class="btn-secondary" href="https://github.com/HKUDS/CLI-Anything" target="_blank">
             <svg viewBox="0 0 98 96" fill="currentColor"><path fill-rule="evenodd" clip-rule="evenodd" d="M48.854 0C21.839 0 0 22 0 49.217c0 21.756 13.993 40.172 33.405 46.69 2.427.49 3.316-1.059 3.316-2.362 0-1.141-.08-5.052-.08-9.127-13.59 2.934-16.42-5.867-16.42-5.867-2.184-5.704-5.42-7.17-5.42-7.17-4.448-3.015.324-3.015.324-3.015 4.934.326 7.523 5.052 7.523 5.052 4.367 7.496 11.404 5.378 14.235 4.074.404-3.178 1.699-5.378 3.074-6.6C29.304 70.25 17.9 66.013 17.9 47.02c0-5.52 1.94-10.046 5.127-13.58-.486-1.302-2.264-6.437.486-13.34 0 0 4.206-1.302 13.59 5.216 3.963-1.14 8.17-1.628 12.34-1.628 4.17 0 8.376.568 12.34 1.628 9.384-6.518 13.59-5.216 13.59-5.216 2.75 6.903.972 12.038.486 13.34 3.268 3.534 5.127 8.06 5.127 13.58 0 19.074-11.485 23.15-22.328 24.29 1.78 1.548 3.316 4.481 3.316 9.126 0 6.6-.08 11.897-.08 13.526 0 1.304.89 2.853 3.316 2.364 19.412-6.52 33.405-24.935 33.405-46.691C97.707 22 75.788 0 48.854 0z"/></svg>
             Star on GitHub
@@ -1899,6 +1815,11 @@
         <section class="rail-panel">
           <h3>Empower your agent</h3>
           <p>Install the meta-skill once, then let the agent choose the right CLI from the registry.</p>
+          <div class="install-row">
+            <span class="chip-label">npx skills</span>
+            <code>npx skills add HKUDS/CLI-Anything --skill cli-hub-meta-skill -g -y</code>
+            <button class="copy-btn" onclick="copyCmd(this, 'npx skills add HKUDS/CLI-Anything --skill cli-hub-meta-skill -g -y')">Copy</button>
+          </div>
           <div class="install-row">
             <span class="chip-label">OpenClaw</span>
             <code>openclaw skills install cli-anything-hub</code>
@@ -2081,7 +2002,7 @@
       </div>
       <div class="footer-stats">
         <div class="footer-label">Traffic Snapshot</div>
-        <div class="footer-analytics-link" aria-label="Traffic snapshot">
+        <a class="footer-analytics-link" href="https://cloud.umami.is/share/mnilRgKH0oo7SJTs" target="_blank">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
           <span class="stat-dot dot-total"></span>
           <span id="stat-total">&mdash;</span> visits
@@ -2091,7 +2012,7 @@
           <span class="analytics-sep">&middot;</span>
           <span class="stat-dot dot-agent"></span>
           <span id="stat-agent">&mdash;</span> AI agent
-        </div>
+        </a>
       </div>
     </footer>
   </div>
@@ -2123,7 +2044,7 @@
     });
 
     const REPO = 'https://github.com/HKUDS/CLI-Anything';
-    const GITHUB_REPO_API = 'https://api.github.com/repos/HKUDS/CLI-Anything';
+    const REPO_SKILLS_SOURCE = 'HKUDS/CLI-Anything';
     const REGISTRY_URLS = [
       '../../registry.json',
       'https://raw.githubusercontent.com/HKUDS/CLI-Anything/main/registry.json'
@@ -2162,34 +2083,6 @@
         }
       }
       return null;
-    }
-
-    function formatCompactCount(value) {
-      return new Intl.NumberFormat('en', {
-        notation: 'compact',
-        maximumFractionDigits: value >= 10000 ? 0 : 1,
-      }).format(value);
-    }
-
-    async function loadGitHubStars() {
-      try {
-        const resp = await fetch(GITHUB_REPO_API, {
-          headers: { Accept: 'application/vnd.github+json' }
-        });
-        if (!resp.ok) return;
-
-        const repo = await resp.json();
-        const stars = repo.stargazers_count;
-        if (typeof stars !== 'number') return;
-
-        document.querySelectorAll('[data-github-stars]').forEach((el) => {
-          el.textContent = formatCompactCount(stars);
-          el.setAttribute('aria-label', stars.toLocaleString('en-US') + ' GitHub stars');
-          el.title = stars.toLocaleString('en-US') + ' GitHub stars';
-        });
-      } catch (_) {
-        // Keep fallback placeholder when GitHub API is unavailable.
-      }
     }
 
     async function loadRegistries() {
@@ -2405,38 +2298,48 @@
       grid.innerHTML = (deck === 'harness' ? filtered.map(renderHarnessCard) : filtered.map(renderPublicCard)).join('');
     }
 
-    function isWebUrl(value) {
-      return /^https?:\/\//i.test(value || '');
+    function repoSkillId(skillPath) {
+      if (!skillPath || skillPath.startsWith('http')) return '';
+      const match = skillPath.match(/^skills\/([^/]+)\/SKILL\.md$/);
+      return match ? match[1] : '';
     }
 
-    function isRepoSkillPath(value) {
-      return !/\s/.test(value || '') && /(^\.{0,2}\/|\/|\.md$|\.txt$)/i.test(value || '');
+    function normalizeNpxSkillsCmd(cmd) {
+      if (!cmd) return '';
+      const trimmed = cmd.trim();
+      if (!trimmed.startsWith('npx skills add ')) return '';
+      return trimmed
+        .replace(/\s+-g\b/g, '')
+        .replace(/\s+-y\b/g, '')
+        .trim() + ' -g -y';
     }
 
-    function renderSkillAction(value) {
-      if (!value) return '';
-      if (isWebUrl(value)) {
-        return '<a href="' + esc(value) + '" target="_blank">Skill</a>';
-      }
-      if (isRepoSkillPath(value)) {
-        return '<a href="' + REPO + '/blob/main/' + esc(value) + '" target="_blank">Skill</a>';
-      }
-      return '' +
-        '<span class="skill-popover">' +
-          '<button class="card-link-btn skill-trigger" type="button" aria-expanded="false" data-skill-value="' + escAttr(value) + '">Skill</button>' +
-          '<span class="skill-popover-panel">' +
-            '<span class="skill-popover-label">Skill install</span>' +
-            '<code>' + esc(value) + '</code>' +
-            '<button class="card-copy-btn skill-popover-copy" type="button" data-copy-value="' + escAttr(value) + '">Copy</button>' +
-          '</span>' +
-        '</span>';
+    function harnessSkillCmd(c) {
+      const skillId = repoSkillId(c.skill_md);
+      return skillId ? 'npx skills add ' + REPO_SKILLS_SOURCE + ' --skill ' + skillId + ' -g -y' : '';
+    }
+
+    function publicSkillCmd(c) {
+      return normalizeNpxSkillsCmd(c.skill_md);
+    }
+
+    function renderCommandStack(steps, sourceLabel) {
+      return '<div class="card-command-stack">' + steps.map((step) =>
+        '<div class="card-command-block">' +
+          '<div class="card-command-label"><span>' + esc(step.label) + '</span><span>' + esc(step.badge || sourceLabel) + '</span></div>' +
+          '<div class="card-command">' + esc(step.cmd) + '</div>' +
+          '<div class="card-command-actions"><button class="card-copy-btn" onclick="copyCmd(this, \'' + esc(step.cmd) + '\')">Copy</button></div>' +
+        '</div>'
+      ).join('') + '</div>';
     }
 
     function renderHarnessCard(c) {
       const requiresHtml = c.requires
         ? '<div class="card-requires"><strong>Requires</strong> ' + esc(c.requires) + '</div>'
         : '';
-      const skillLink = renderSkillAction(c.skill_md);
+      const skillLink = c.skill_md
+        ? '<a href="' + (c.skill_md.startsWith('http') ? c.skill_md : (REPO + '/blob/main/' + c.skill_md)) + '" target="_blank">Skill</a>'
+        : '';
       const sourceLink = c.source_url
         ? '<a href="' + esc(c.source_url) + '" target="_blank">Source</a>'
         : '<a href="' + REPO + '/tree/main/' + c.name + '/agent-harness" target="_blank">Source</a>';
@@ -2447,12 +2350,18 @@
       const isTeam = contributors.length === 1 && contributors[0].name === 'CLI-Anything-Team';
       const contributorHtml = contributors.length
         ? '<div class="card-contributor">' +
-          contributors.map((ct) => '<a href="' + esc(ct.url) + '" target="_blank">' + esc(ct.name) + '</a>').join(', ') +
+          contributors.map((ct) => '<a href="' + esc(ct.url) + '" target="_blank">' + esc(ct.name) + '</a>').join('') +
           (isTeam ? '' : '<span class="community-badge">Community</span>') +
           '</div>'
         : '';
       const dateHtml = c.last_modified ? '<div class="card-date">Updated ' + esc(c.last_modified) + '</div>' : '';
-      const linksHtml = sourceLink + skillLink;
+      const linksHtml = sourceLink + (skillLink ? skillLink : '');
+      const installSteps = [
+        { label: 'Step 1 · Install CLI', cmd: 'cli-hub install ' + c.name, badge: 'CLI-Hub' }
+      ];
+      const skillCmd = harnessSkillCmd(c);
+      if (skillCmd) installSteps.push({ label: 'Step 2 · Install Skill', cmd: skillCmd, badge: 'npx skills' });
+      const installBlock = renderCommandStack(installSteps, 'CLI-Hub');
 
       return `
         <article class="card card--harness">
@@ -2469,16 +2378,7 @@
             ${dateHtml}
             ${requiresHtml}
           </div>
-          <div class="card-command-block">
-            <div class="card-command-label">
-              <span>Install via CLI-Hub</span>
-              <span>PyPI</span>
-            </div>
-            <div class="card-command">pip install cli-anything-hub\ncli-hub install ${esc(c.name)}</div>
-            <div class="card-command-actions">
-              <button class="card-copy-btn" onclick="copyCmd(this, 'pip install cli-anything-hub && cli-hub install ${esc(c.name)}')">Copy</button>
-            </div>
-          </div>
+          ${installBlock}
           <div class="card-footer">
             <div class="card-links">${linksHtml}</div>
             ${contributorHtml}
@@ -2505,12 +2405,11 @@
       const titleHtml = c.homepage
         ? '<a href="' + esc(c.homepage) + '" target="_blank">' + esc(c.display_name) + EXTERNAL_LINK_SVG + '</a>'
         : esc(c.display_name);
-      const skillLink = renderSkillAction(c.skill_md);
       const sourceLink = c.source_url ? '<a href="' + esc(c.source_url) + '" target="_blank">Source</a>' : '';
       const contributors = c.contributors || [];
       const contributorHtml = contributors.length
         ? '<div class="card-contributor">' +
-          contributors.map((ct) => '<a href="' + esc(ct.url) + '" target="_blank">' + esc(ct.name) + '</a>').join(', ') +
+          contributors.map((ct) => '<a href="' + esc(ct.url) + '" target="_blank">' + esc(ct.name) + '</a>').join('') +
           '</div>'
         : '';
       const directCmd = c.install_cmd || publicDirectCmd(c);
@@ -2518,13 +2417,14 @@
         ? '<div class="card-npx">Direct command: <code>' + esc(directCmd) + '</code></div>'
         : '';
       const installNotesHtml = c.install_notes ? '<div class="card-npx">' + esc(c.install_notes) + '</div>' : '';
+      const installSteps = isBundled
+        ? []
+        : [{ label: 'Step 1 · Install CLI', cmd: 'cli-hub install ' + c.name, badge: 'CLI-Hub' }];
+      const skillCmd = publicSkillCmd(c);
+      if (skillCmd) installSteps.push({ label: 'Step 2 · Install Skill', cmd: skillCmd, badge: 'npx skills' });
       const installBlock = isBundled
         ? '<div class="card-install-note">Bundled with the upstream application. Install or update the parent app and enable its CLI integration.</div>'
-        : '<div class="card-command-block">' +
-            '<div class="card-command-label"><span>Install via CLI-Hub</span><span>Source aware</span></div>' +
-            '<div class="card-command">pip install cli-anything-hub\ncli-hub install ' + esc(c.name) + '</div>' +
-            '<div class="card-command-actions"><button class="card-copy-btn" onclick="copyCmd(this, \'pip install cli-anything-hub && cli-hub install ' + esc(c.name) + '\')">Copy</button></div>' +
-          '</div>';
+        : renderCommandStack(installSteps, 'Source aware');
 
       return `
         <article class="card card--public">
@@ -2544,7 +2444,7 @@
           </div>
           ${installBlock}
           <div class="card-footer">
-            <div class="card-links">${sourceLink}${skillLink}</div>
+            <div class="card-links">${sourceLink}</div>
             ${contributorHtml}
           </div>
         </article>`;
@@ -2560,68 +2460,12 @@
       });
     }
 
-    function toggleSkillPopover(trigger) {
-      const popover = trigger.closest('.skill-popover');
-      if (!popover) return;
-      const shouldOpen = !popover.classList.contains('is-open');
-      document.querySelectorAll('.skill-popover.is-open').forEach((node) => {
-        node.classList.remove('is-open');
-        const btn = node.querySelector('.skill-trigger');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      });
-      if (!shouldOpen) return;
-      popover.classList.add('is-open');
-      trigger.setAttribute('aria-expanded', 'true');
-    }
-
     function esc(s) {
       if (!s) return '';
       const d = document.createElement('div');
       d.textContent = s;
       return d.innerHTML;
     }
-
-    function escAttr(s) {
-      if (!s) return '';
-      return String(s)
-        .replace(/&/g, '&amp;')
-        .replace(/"/g, '&quot;')
-        .replace(/</g, '&lt;')
-        .replace(/>/g, '&gt;');
-    }
-
-    document.addEventListener('click', (e) => {
-      const copyBtn = e.target.closest('.skill-popover-copy');
-      if (copyBtn) {
-        e.preventDefault();
-        e.stopPropagation();
-        copyCmd(copyBtn, copyBtn.dataset.copyValue);
-        return;
-      }
-
-      const trigger = e.target.closest('.skill-trigger');
-      if (trigger) {
-        e.preventDefault();
-        e.stopPropagation();
-        toggleSkillPopover(trigger);
-        return;
-      }
-
-      document.querySelectorAll('.skill-popover.is-open').forEach((node) => {
-        node.classList.remove('is-open');
-        const btn = node.querySelector('.skill-trigger');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      });
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key !== 'Escape') return;
-      document.querySelectorAll('.skill-popover.is-open').forEach((node) => {
-        node.classList.remove('is-open');
-        const btn = node.querySelector('.skill-trigger');
-        if (btn) btn.setAttribute('aria-expanded', 'false');
-      });
-    });
 
     document.getElementById('search-harness').addEventListener('input', (e) => {
       deckState.harness.query = e.target.value;
@@ -2711,47 +2555,48 @@
 
       const UMAMI_API = 'https://api.umami.is/v1';
       const UMAMI_KEY = 'api_idAebMhzn6z0hsUQT7BSxRuCK2GUZvRY';
-      const HKUDS_WEBSITE_ID = '07082d05-efd3-4f85-a7a1-b426b0e8bfaa';
-      const CC_WEBSITE_ID = 'a076c661-bed1-405c-a522-813794e688b4';
+      const WEBSITE_IDS = [
+        '07082d05-efd3-4f85-a7a1-b426b0e8bfaa',
+        'a076c661-bed1-405c-a522-813794e688b4',
+      ];
       const headers = { Accept: 'application/json', 'x-umami-api-key': UMAMI_KEY };
 
       async function loadVisitorStats() {
         try {
           const now = Date.now();
-          let hkudsHumanVisits = 0;
-          let ccHumanVisits = 0;
-          let ccAgentVisits = 0;
-          const [hkudsStatsResp, ccEventsResp] = await Promise.all([
-            fetch(UMAMI_API + '/websites/' + HKUDS_WEBSITE_ID + '/stats?startAt=0&endAt=' + now, { headers }),
-            fetch(UMAMI_API + '/websites/' + CC_WEBSITE_ID + '/events/series?startAt=0&endAt=' + now + '&unit=year&timezone=UTC', { headers })
+          let totalVisits = 0;
+          let humanCount = 0;
+          const fetches = WEBSITE_IDS.flatMap((id) => [
+            fetch(UMAMI_API + '/websites/' + id + '/stats?startAt=0&endAt=' + now, { headers }),
+            fetch(UMAMI_API + '/websites/' + id + '/events/series?startAt=0&endAt=' + now + '&unit=year&timezone=UTC', { headers })
           ]);
+          const [statsResp1, eventsResp1, statsResp2, eventsResp2] = await Promise.all(fetches);
 
-          if (hkudsStatsResp.ok) {
-            const stats = await hkudsStatsResp.json();
-            hkudsHumanVisits = stats.visits ?? 0;
+          for (const resp of [statsResp1, statsResp2]) {
+            if (resp.ok) {
+              const stats = await resp.json();
+              totalVisits += stats.visits ?? 0;
+            }
           }
 
-          if (ccEventsResp.ok) {
-            const events = await ccEventsResp.json();
-            events.forEach((e) => {
-              if (e.x === 'visit-human') ccHumanVisits += e.y || 0;
-              if (e.x === 'visit-agent') ccAgentVisits += e.y || 0;
-            });
+          for (const resp of [eventsResp1, eventsResp2]) {
+            if (resp.ok) {
+              const events = await resp.json();
+              events.forEach((e) => {
+                if (e.x === 'visit-human') humanCount += e.y || 0;
+              });
+            }
           }
-
-          const humanCount = hkudsHumanVisits + ccHumanVisits;
-          const totalVisits = humanCount + ccAgentVisits;
 
           document.getElementById('stat-total').textContent = totalVisits.toLocaleString();
           document.getElementById('stat-human').textContent = humanCount.toLocaleString();
-          document.getElementById('stat-agent').textContent = ccAgentVisits.toLocaleString();
+          document.getElementById('stat-agent').textContent = Math.max(0, totalVisits - humanCount).toLocaleString();
         } catch (_) {
           // Leave fallback dashes.
         }
       }
 
       loadVisitorStats();
-      loadGitHubStars();
     })();
   </script>
 </body>

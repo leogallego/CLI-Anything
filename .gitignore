@@ -52,6 +52,9 @@
 !/openclaw-skill/
 !/cli-hub-meta-skill/
 !/cli-hub/
+!/cli-hub-matrix/
+!/skills/
+!/skills/**
 
 # Ignore cli-hub-skill (auto-generated, not tracked)
 /cli-hub-skill/
@@ -92,7 +95,6 @@
 !/renderdoc/
 !/cloudcompare/
 !/openscreen/
-!/QGIS/
 !/n8n/
 !/obsidian/
 
@@ -165,8 +167,6 @@
 /cloudcompare/.*
 /openscreen/*
 /openscreen/.*
-/QGIS/*
-/QGIS/.*
 /cloudanalyzer/*
 /cloudanalyzer/.*
 /wiremock/*
@@ -220,7 +220,6 @@
 !/wiremock/
 !/wiremock/agent-harness/
 !/exa/agent-harness/
-!/QGIS/agent-harness/
 !/n8n/agent-harness/
 !/obsidian/agent-harness/
 !/safari/
@@ -251,6 +250,7 @@ assets/gen_typing_gif.py
 # Step 10: Allow CLI Hub registry and frontend
 !/registry.json
 !/public_registry.json
+!/matrix_registry.json
 !/docs/
 /docs/*
 !/docs/hub/
