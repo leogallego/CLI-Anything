@@ -12,7 +12,14 @@ ROOT_SKILLS_DIR = REPO_ROOT / "skills"
 
 def _canonical_skill_id(source: Path) -> str:
     rel = source.relative_to(REPO_ROOT)
-    software_dir = rel.parts[0]
+    parts = rel.parts
+    if "cli_anything" in parts:
+        package_index = parts.index("cli_anything") + 1
+        if package_index < len(parts):
+            package_name = parts[package_index]
+            return f"cli-anything-{package_name.replace('_', '-')}"
+
+    software_dir = parts[0]
     return f"cli-anything-{software_dir.replace('_', '-')}"
 
 
